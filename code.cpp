@@ -21,8 +21,8 @@ const unsigned long reconnectInterval = 5000;  // Reconnect interval in millisec
 #define TOKEN "BBUS-Gg1IdSgRCQcaLFMtrjvvQIc4lPG7lH"  // Put your Ubidots' TOKEN
 
 #ifndef USE_WIFI_MANAGER
-const char* ssid = "realme C53";
-const char* password = "sanju0830";
+const char* ssid = "****";
+const char* password = "***";
 #endif
 
 #define DEVICE_LABEL "FallDetect"  // Assign the device label
@@ -33,11 +33,11 @@ const char* password = "sanju0830";
 #define SMTP_PORT esp_mail_smtp_port_587  // port 465 is not available for Outlook.com
 
 /* The log in credentials */
-#define AUTHOR_EMAIL "acharsanjana9@gmail.com"
-#define AUTHOR_PASSWORD "qneicgihijwkfbtn"
+#define AUTHOR_EMAIL "****"
+#define AUTHOR_PASSWORD "****"
 
 /* Recipient email address */
-#define RECIPIENT_EMAIL "acharsanjana895@gmail.com"
+#define RECIPIENT_EMAIL "******"
 
 /* Declare the global used SMTPSession object for SMTP transport */
 SMTPSession smtp;
@@ -194,13 +194,13 @@ void reconnect() {
 
 void sendMail() {
   /* Set the message headers */
-  message.sender.name = F("Sanjana");
+  message.sender.name = F("name of the sender");
   message.sender.email = AUTHOR_EMAIL;
 
   String subject = "!!!Fall Alert!!! ";
   message.subject = subject;
 
-  message.addRecipient(F("sanju"), RECIPIENT_EMAIL);
+  message.addRecipient(F("recipient name"), RECIPIENT_EMAIL);
 
   String textMsg = "A fall has being detected.\n";
 
